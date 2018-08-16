@@ -35,13 +35,7 @@ func main() {
 				continue
 			}
 			message := strings.Replace(ev.Msg.Text, botTagString, "", -1)
-			//fmt.Println(msg.Data)
 			messageParts := strings.Split(message, " ")
-
-			fmt.Println(messageParts[0])
-			fmt.Println(messageParts[1])
-			fmt.Println(messageParts[2])
-			fmt.Println(messageParts[3])
 			if messageParts[1] == "remote" {
 				go remoteExecution(messageParts, rtm, ev)
 			} else if messageParts[1] == "local" {
@@ -76,7 +70,7 @@ func remoteExecution(messageParts []string, rtm *slack.RTM, ev interface{}) {
 	cmd = exec.Command(os.Getenv("SSH_COMMAND_PATH"),
 		os.Getenv("SSH_COMMAND_ARGS"),
 		"ssh -p "+os.Getenv("SSH_PORT")+" -i "+os.Getenv("SSH_KEY")+" "+os.Getenv("SSH_USER")+"@"+messageParts[2]+" 'sudo -u root "+strings.Join(messageParts[3:], " ")+";exit'")
-	fmt.Println("Registering command:" + messageParts[2] + " : " + strings.Join(messageParts[3:], " "))
+	fmt.Println("Registering remote command:" + messageParts[2] + " : " + strings.Join(messageParts[3:], " "))
 	copyAndCaptureOutput(cmd, rtm, ev)
 	cmd.Start()
 
