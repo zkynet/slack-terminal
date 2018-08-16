@@ -1,7 +1,7 @@
 # SLACK WORKSPACE TERMINAL
 ## This is mostly meant for personal use and is subject to change/improvement. 
 
-1. go get github.com/zkynet/slack-terminal
+1. go get github.com/zkynet/slack-terminal (or git clone)
 2. cd {GO SOUCE}/zkynet/slack-terminal/[windows/linux/mac]
 3. touch .env
 4. edit .env file to fit your needs.
