@@ -20,13 +20,22 @@ SLACK_API_KEY= [ slack api key ]
 # usage
 
 ```
-@my-slack-bot HOST COMMAND
+@my-slack-bot TAG HOST COMMAND
 ```
 
 ```
-@my-slack-bot HOSTNAME ping -c 4 172.217.20.110
+@my-slack-bot TAG HOSTNAME ping -c 4 172.217.20.110
 ```
 
 ```
-@my-slack-bot HOSTNAME netstat -tulpn
+@my-slack-bot TAG HOSTNAME netstat -tulpn
+```
+
+# example
+```
+@my-slack-bot remote my.dev.domain.com netstat -tulpn
+```
+
+```
+@my-slack-bot local netstat -tulpn
 ```
