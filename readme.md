@@ -5,6 +5,8 @@
 2. cd into the repo and into the binary folder[windows/linux/mac] matching your OS
 3. touch .env
 4. edit .env file to fit your needs.
+5. $ ./bot
+6. enjoy
 
 # .env
 ```
