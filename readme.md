@@ -2,7 +2,7 @@
 ## This is mostly meant for personal use and is subject to change/improvement. 
 
 1. go get github.com/zkynet/slack-terminal (or git clone)
-2. cd into the repo and into the platform binary folder matching your OS
+2. cd into the repo and into the binary folder[windows/linux/mac] matching your OS
 3. touch .env
 4. edit .env file to fit your needs.
 
