@@ -1,4 +1,4 @@
-# SLACK WORKSPACE SSH
+# SLACK WORKSPACE TERMINAL
 ## This is mostly meant for personal use and is subject to change/improvement. 
 
 1. go get github.com/zkynet/slack-terminal
