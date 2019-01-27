@@ -40,6 +40,16 @@ func main() {
 				go remoteExecution(messageParts, rtm, ev)
 			} else if messageParts[1] == "local" {
 				go localExecution(messageParts, rtm, ev)
+			} else if messageParts[1] == "all" {
+				fmt.Println("ALLL!!!	")
+
+				go remoteExecution([]string{"all", "all", "dev.users1.zkynet.cloud", "tail -f /var/log/nginx/access.log /var/log/nginx/error.log"}, rtm, ev)
+				go remoteExecution([]string{"all", "all", "dev.users2.zkynet.cloud", "tail -f /var/log/nginx/access.log /var/log/nginx/error.log"}, rtm, ev)
+				go remoteExecution([]string{"all", "all", "dev.users3.zkynet.cloud", "tail -f /var/log/nginx/access.log /var/log/nginx/error.log"}, rtm, ev)
+
+				go remoteExecution([]string{"all", "all", "dev.users1.zkynet.cloud", "tail -f /var/log/supervisor-application/*"}, rtm, ev)
+				go remoteExecution([]string{"all", "all", "dev.users2.zkynet.cloud", "tail -f /var/log/supervisor-application/*"}, rtm, ev)
+				go remoteExecution([]string{"all", "all", "dev.users3.zkynet.cloud", "tail -f /var/log/supervisor-application/*"}, rtm, ev)
 			}
 
 		default:
